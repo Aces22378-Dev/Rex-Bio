@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!✧𝓐𝓬𝓮𝓼✧! | Galactic Archives</title>
+    <style>
+        :root {
+            --jedi-blue: #00d4ff;
+            --space-black: #020205;
+            --starlight: #e0f7fa;
+            --panel-bg: rgba(0, 20, 40, 0.85);
+        }
+
+        body {
+            margin: 0;
+            /* Starfield background */
+            background: url('https://images.unsplash.com/photo-1506318137071-a8e063b4b47e?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--starlight);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+
+        .overlay {
+            background: radial-gradient(circle, rgba(0, 10, 20, 0.6) 0%, rgba(0, 0, 0, 0.9) 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .pfp {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            /* Lightsaber glow effect */
+            border: 3px solid var(--jedi-blue);
+            box-shadow: 0 0 20px var(--jedi-blue), inset 0 0 10px var(--jedi-blue);
+            margin-bottom: 20px;
+            background-color: var(--space-black);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: var(--jedi-blue);
+            text-shadow: 0 0 10px var(--jedi-blue), 0 0 20px rgba(0, 212, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .tab-container {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 2px solid var(--jedi-blue);
+            padding-bottom: 10px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid var(--jedi-blue);
+            color: var(--jedi-blue);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: inherit;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); /* Beveled "Star Wars" edge */
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--jedi-blue);
+            color: var(--space-black);
+            box-shadow: 0 0 15px var(--jedi-blue);
+        }
+
+        .content-box {
+            margin-top: 30px;
+            min-height: 250px;
+            max-width: 650px;
+            background: var(--panel-bg);
+            padding: 25px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 5px;
+            animation: hyperdrive 0.6s ease-out;
+        }
+
+        @keyframes hyperdrive {
+            from { opacity: 0; transform: scale(1.1); filter: blur(10px); }
+            to { opacity: 1; transform: scale(1); filter: blur(0); }
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #b0d4ff;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .link-grid a {
+            padding: 12px;
+            background: rgba(0, 20, 40, 0.5);
+            color: var(--jedi-blue);
+            text-decoration: none;
+            border: 1px solid var(--jedi-blue);
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .link-grid a:hover {
+            background: var(--jedi-blue);
+            color: var(--space-black);
+            box-shadow: 0 0 10px var(--jedi-blue);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        ul li {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: var(--jedi-blue);
+        }
+
+        ul li span {
+            color: var(--starlight);
+        }
+
+        /* Scrollbar styling for that tech look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--space-black); }
+        ::-webkit-scrollbar-thumb { background: var(--jedi-blue); }
+    </style>
+</head>
+<body>
+
+    <div class="overlay">
+        <img src="https://i.ibb.co/PvbYmQdy/download.webp" alt="Aces" class="pfp">
+        <h1>CC-2201 | Commander Bow</h1>
+
+        <div class="tab-container">
+            <button class="tab-btn active" onclick="openTab(event, 'about')">About Me</button>
+            <button class="tab-btn" onclick="openTab(event, 'doing')">What I Do</button>
+            <button class="tab-btn" onclick="openTab(event, 'socials')">Social Links</button>
+        </div>
+
+        <div class="content-box">
+            <div id="about" class="tab-content active">
+                <p>Hello, I am Cap. I like playing Star Wars games on Roblox like CT, TGAR, and AGAR. I like Chinese food. I’m pretty active on discord so if you wanna be friends, just Dm me. Peace.</p>
+            </div>
+
+            <div id="doing" class="tab-content">
+                <ul>
+                    <li>I play Roblox and go outside sometimes.</span></li>
+                </ul>
+            </div>
+
+            <div id="socials" class="tab-content">
+                <div class="link-grid">
+                    <a href="https://www.roblox.com/users/2477395338/profile" target="_blank">My Roblox</a>
+                    <a href="https://discord.com/channels/@me/1451989068249563287" target="_blank">My Discord</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+</body>
+</html>
