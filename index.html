@@ -122,7 +122,6 @@
             box-sizing: border-box;
         }
 
-        /* Card Grid Styling */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -157,29 +156,15 @@
             text-align: center;
         }
 
-        /* PREMIUM GLOWING SILVER RESPECT CARD */
         .role-card.respect {
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(200, 200, 200, 0.05));
             border: 2px solid #ffffff;
-            box-shadow: 0 0 15px var(--silver-glow), inset 0 0 10px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px var(--silver-glow);
         }
 
-        .role-card.respect h3 {
-            color: #ffffff;
-            text-shadow: 0 0 10px #ffffff;
-            font-weight: bold;
-        }
+        .role-card.respect h3 { color: #ffffff; text-shadow: 0 0 10px #ffffff; }
 
-        .role-card.respect p {
-            color: #ffffff;
-            opacity: 0.9;
-        }
-
-        /* EARLY SUPPORTER GOLD CARD */
-        .role-card.early {
-            border: 1px solid var(--gold);
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-        }
+        .role-card.early { border: 1px solid var(--gold); }
         .role-card.early h3 { color: var(--gold); }
 
         @keyframes hyperdrive {
@@ -189,8 +174,6 @@
 
         .tab-content { display: none; }
         .tab-content.active { display: block; }
-
-        p { text-align: left; }
 
         .link-grid {
             display: grid;
@@ -217,19 +200,13 @@
         ul { list-style: none; padding: 0; text-align: left; }
         ul li { margin: 10px 0; color: var(--jedi-blue); }
         ul li span { color: var(--starlight); }
-
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--space-black); }
-        ::-webkit-scrollbar-thumb { background: var(--jedi-blue); }
     </style>
 </head>
 <body>
 
     <div class="overlay">
         <img src="https://i.ibb.co/PvbYmQdy/download.webp" alt="Commander Bow" class="pfp">
-        
         <h1>CC-2201 | Commander Bow</h1>
-
         <a href="https://aces22378-dev.github.io/Get-a-bio/" target="_blank" class="header-cta">Get your own bio today for free with Aces.</a>
 
         <div class="tab-container">
@@ -261,6 +238,10 @@
                         <h3>Aces' Respect</h3>
                         <p>Awarded by the Founder for excellence.</p>
                     </div>
+                    <div class="role-card">
+                        <h3>Aces' Friend</h3>
+                        <p>Trusted collaborator and peer.</p>
+                    </div>
                 </div>
             </div>
 
@@ -290,6 +271,5 @@
             evt.currentTarget.className += " active";
         }
     </script>
-
 </body>
 </html>
