@@ -10,9 +10,9 @@
             --space-black: #020205;
             --starlight: #e0f7fa;
             --panel-bg: rgba(0, 20, 40, 0.85);
-            /* New Aces Medal Colors */
-            --medal-aces-bg: #000000;
-            --medal-aces-accent: #ff0000;
+            --card-bg: rgba(0, 10, 25, 0.9);
+            --silver-glow: rgba(255, 255, 255, 0.6);
+            --gold: #ffd700;
         }
 
         body {
@@ -22,6 +22,7 @@
             color: var(--starlight);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
+            overflow-x: hidden;
         }
 
         .overlay {
@@ -44,37 +45,12 @@
             background-color: var(--space-black);
         }
 
-        .name-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
         h1 {
             font-size: 2.5em;
             margin: 0;
             color: var(--jedi-blue);
             text-shadow: 0 0 10px var(--jedi-blue), 0 0 20px rgba(0, 212, 255, 0.5);
             letter-spacing: 2px;
-        }
-
-        /* Updated Red and Black Aces Respect Medal */
-        .medal {
-            background: var(--medal-aces-bg);
-            color: var(--medal-aces-accent);
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.4em;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 1px;
-            border: 1px solid var(--medal-aces-accent);
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
-            vertical-align: middle;
-            display: inline-block;
-            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
         }
 
         .header-cta {
@@ -86,13 +62,12 @@
             text-decoration: none;
             border: 1px solid var(--jedi-blue);
             font-weight: bold;
-            font-size: 0.9em;
+            font-size: 0.8em;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: 0.3s;
             clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
             backdrop-filter: blur(5px);
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
         }
 
         .header-cta:hover {
@@ -106,6 +81,8 @@
             margin-top: 30px;
             display: flex;
             gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
             border-bottom: 2px solid var(--jedi-blue);
             padding-bottom: 10px;
         }
@@ -118,7 +95,7 @@
             cursor: pointer;
             font-family: inherit;
             text-transform: uppercase;
-            font-size: 0.8em;
+            font-size: 0.7em;
             font-weight: bold;
             letter-spacing: 2px;
             transition: 0.3s;
@@ -132,12 +109,12 @@
         }
 
         .content-box {
-            margin-top: 30px;
+            margin-top: 25px;
             min-height: 250px;
             width: 100%;
             max-width: 650px;
             background: var(--panel-bg);
-            padding: 25px;
+            padding: 30px;
             border: 1px solid rgba(0, 212, 255, 0.3);
             backdrop-filter: blur(10px);
             border-radius: 5px;
@@ -145,25 +122,75 @@
             box-sizing: border-box;
         }
 
+        /* Card Grid Styling */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+        }
+
+        .role-card {
+            background: var(--card-bg);
+            border: 1px solid var(--jedi-blue);
+            padding: 15px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .role-card h3 {
+            margin: 0 0 5px 0;
+            color: var(--jedi-blue);
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .role-card p {
+            margin: 0;
+            font-size: 0.75em;
+            color: #b0d4ff;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        /* PREMIUM GLOWING SILVER RESPECT CARD */
+        .role-card.respect {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(200, 200, 200, 0.05));
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 15px var(--silver-glow), inset 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .role-card.respect h3 {
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff;
+            font-weight: bold;
+        }
+
+        .role-card.respect p {
+            color: #ffffff;
+            opacity: 0.9;
+        }
+
+        /* EARLY SUPPORTER GOLD CARD */
+        .role-card.early {
+            border: 1px solid var(--gold);
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+        .role-card.early h3 { color: var(--gold); }
+
         @keyframes hyperdrive {
             from { opacity: 0; transform: scale(1.1); filter: blur(10px); }
             to { opacity: 1; transform: scale(1); filter: blur(0); }
         }
 
-        .tab-content {
-            display: none;
-        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
 
-        .tab-content.active {
-            display: block;
-        }
-
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #b0d4ff;
-            text-align: left;
-        }
+        p { text-align: left; }
 
         .link-grid {
             display: grid;
@@ -177,7 +204,7 @@
             color: var(--jedi-blue);
             text-decoration: none;
             border: 1px solid var(--jedi-blue);
-            font-size: 0.85em;
+            font-size: 0.8em;
             font-weight: bold;
             transition: 0.3s;
         }
@@ -185,24 +212,11 @@
         .link-grid a:hover {
             background: var(--jedi-blue);
             color: var(--space-black);
-            box-shadow: 0 0 10px var(--jedi-blue);
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        ul li {
-            margin: 10px 0;
-            font-size: 1.1em;
-            color: var(--jedi-blue);
-        }
-
-        ul li span {
-            color: var(--starlight);
-        }
+        ul { list-style: none; padding: 0; text-align: left; }
+        ul li { margin: 10px 0; color: var(--jedi-blue); }
+        ul li span { color: var(--starlight); }
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--space-black); }
@@ -212,29 +226,42 @@
 <body>
 
     <div class="overlay">
-        <img src="https://i.ibb.co/PvbYmQdy/download.webp" alt="Aces" class="pfp">
+        <img src="https://i.ibb.co/PvbYmQdy/download.webp" alt="Commander Bow" class="pfp">
         
-        <div class="name-container">
-            <h1>CC-2201 | Commander Bow <span class="medal">Medal of Aces'(founder) Respect</span></h1>
-        </div>
+        <h1>CC-2201 | Commander Bow</h1>
 
         <a href="https://aces22378-dev.github.io/Get-a-bio/" target="_blank" class="header-cta">Get your own bio today for free with Aces.</a>
 
         <div class="tab-container">
             <button class="tab-btn active" onclick="openTab(event, 'about')">About Me</button>
             <button class="tab-btn" onclick="openTab(event, 'doing')">What I Do</button>
+            <button class="tab-btn" onclick="openTab(event, 'cards')">Cards</button>
             <button class="tab-btn" onclick="openTab(event, 'socials')">Social Links</button>
         </div>
 
         <div class="content-box">
             <div id="about" class="tab-content active">
-                <p>Hello, I am Cap. I like playing Star Wars games on Roblox like CT, TGAR, and AGAR. I like Chinese food. I’m pretty active on discord so if you wanna be friends, just Dm me. Peace.</p>
+                <p>Hello, I am Cap. I like playing Star Wars games on Roblox like CT, TGAR, and AGAR. I like Chinese food. I’m pretty active on Discord so if you wanna be friends, just DM me. Peace.</p>
             </div>
 
             <div id="doing" class="tab-content">
                 <ul>
                     <li>- <span>I play Roblox and go outside sometimes.</span></li>
+                    <li>- <span>Strategic command & operations.</span></li>
                 </ul>
+            </div>
+
+            <div id="cards" class="tab-content">
+                <div class="card-grid">
+                    <div class="role-card early">
+                        <h3>Early Supporter</h3>
+                        <p>One of the first to join the journey.</p>
+                    </div>
+                    <div class="role-card respect">
+                        <h3>Aces' Respect</h3>
+                        <p>Awarded by the Founder for excellence.</p>
+                    </div>
+                </div>
             </div>
 
             <div id="socials" class="tab-content">
