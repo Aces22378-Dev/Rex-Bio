@@ -14,7 +14,6 @@
 
         body {
             margin: 0;
-            /* Starfield background */
             background: url('https://images.unsplash.com/photo-1506318137071-a8e063b4b47e?q=80&w=2070&auto=format&fit=crop') no-repeat center center fixed;
             background-size: cover;
             color: var(--starlight);
@@ -36,7 +35,6 @@
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            /* Lightsaber glow effect */
             border: 3px solid var(--jedi-blue);
             box-shadow: 0 0 20px var(--jedi-blue), inset 0 0 10px var(--jedi-blue);
             margin-bottom: 20px;
@@ -49,6 +47,32 @@
             color: var(--jedi-blue);
             text-shadow: 0 0 10px var(--jedi-blue), 0 0 20px rgba(0, 212, 255, 0.5);
             letter-spacing: 2px;
+        }
+
+        /* Sci-fi Style CTA Button */
+        .header-cta {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--jedi-blue);
+            text-decoration: none;
+            border: 1px solid var(--jedi-blue);
+            font-weight: bold;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+        }
+
+        .header-cta:hover {
+            background: var(--jedi-blue);
+            color: var(--space-black);
+            box-shadow: 0 0 20px var(--jedi-blue);
+            transform: scale(1.05);
         }
 
         .tab-container {
@@ -71,7 +95,7 @@
             font-weight: bold;
             letter-spacing: 2px;
             transition: 0.3s;
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); /* Beveled "Star Wars" edge */
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
         }
 
         .tab-btn.active, .tab-btn:hover {
@@ -83,6 +107,7 @@
         .content-box {
             margin-top: 30px;
             min-height: 250px;
+            width: 100%;
             max-width: 650px;
             background: var(--panel-bg);
             padding: 25px;
@@ -90,6 +115,7 @@
             backdrop-filter: blur(10px);
             border-radius: 5px;
             animation: hyperdrive 0.6s ease-out;
+            box-sizing: border-box;
         }
 
         @keyframes hyperdrive {
@@ -109,6 +135,7 @@
             font-size: 1.1em;
             line-height: 1.6;
             color: #b0d4ff;
+            text-align: left;
         }
 
         .link-grid {
@@ -138,7 +165,6 @@
             list-style: none;
             padding: 0;
             text-align: left;
-            display: inline-block;
         }
 
         ul li {
@@ -151,7 +177,6 @@
             color: var(--starlight);
         }
 
-        /* Scrollbar styling for that tech look */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: var(--space-black); }
         ::-webkit-scrollbar-thumb { background: var(--jedi-blue); }
@@ -162,6 +187,8 @@
     <div class="overlay">
         <img src="https://i.ibb.co/PvbYmQdy/download.webp" alt="Aces" class="pfp">
         <h1>CC-2201 | Commander Bow</h1>
+
+        <a href="https://aces22378-dev.github.io/Get-a-bio/" target="_blank" class="header-cta">Get your own bio today for free with Aces ✓</a>
 
         <div class="tab-container">
             <button class="tab-btn active" onclick="openTab(event, 'about')">About Me</button>
@@ -176,7 +203,7 @@
 
             <div id="doing" class="tab-content">
                 <ul>
-                    <li>I play Roblox and go outside sometimes.</span></li>
+                    <li>- <span>I play Roblox and go outside sometimes.</span></li>
                 </ul>
             </div>
 
