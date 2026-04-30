@@ -10,7 +10,9 @@
             --space-black: #020205;
             --starlight: #e0f7fa;
             --panel-bg: rgba(0, 20, 40, 0.85);
-            --medal-silver: linear-gradient(145deg, #bdc3c7, #2c3e50);
+            /* New Aces Medal Colors */
+            --medal-aces-bg: #000000;
+            --medal-aces-accent: #ff0000;
         }
 
         body {
@@ -58,21 +60,21 @@
             letter-spacing: 2px;
         }
 
-        /* Aces Respect Medal Styling */
+        /* Updated Red and Black Aces Respect Medal */
         .medal {
-            background: var(--medal-silver);
-            color: #fff;
+            background: var(--medal-aces-bg);
+            color: var(--medal-aces-accent);
             padding: 4px 12px;
             border-radius: 4px;
-            font-size: 0.4em; /* Relative to H1 size */
+            font-size: 0.4em;
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 1px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            border: 1px solid var(--medal-aces-accent);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
             vertical-align: middle;
             display: inline-block;
-            text-shadow: 1px 1px 2px #000;
+            text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
         }
 
         .header-cta {
