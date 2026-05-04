@@ -57,30 +57,6 @@
             letter-spacing: 2px;
         }
 
-        .header-cta {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--jedi-blue);
-            text-decoration: none;
-            border: 1px solid var(--jedi-blue);
-            font-weight: bold;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s;
-            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0% 100%);
-            backdrop-filter: blur(5px);
-        }
-
-        .header-cta:hover {
-            background: var(--jedi-blue);
-            color: var(--space-black);
-            box-shadow: 0 0 20px var(--jedi-blue);
-            transform: scale(1.05);
-        }
-
         .tab-container {
             margin-top: 30px;
             display: flex;
@@ -126,50 +102,6 @@
             box-sizing: border-box;
         }
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
-        }
-
-        .role-card {
-            background: var(--card-bg);
-            border: 1px solid var(--jedi-blue);
-            padding: 15px;
-            border-radius: 20px;
-            text-align: center;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .role-card h3 {
-            margin: 0 0 5px 0;
-            color: var(--jedi-blue);
-            font-size: 0.85em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .role-card p {
-            margin: 0;
-            font-size: 0.75em;
-            color: #b0d4ff;
-            line-height: 1.4;
-            text-align: center;
-        }
-
-        .role-card.respect {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(200, 200, 200, 0.05));
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 15px var(--silver-glow);
-        }
-
-        .role-card.respect h3 { color: #ffffff; text-shadow: 0 0 10px #ffffff; }
-        .role-card.early { border: 1px solid var(--gold); }
-        .role-card.early h3 { color: var(--gold); }
-
         @keyframes hyperdrive {
             from { opacity: 0; transform: scale(1.1); filter: blur(10px); }
             to { opacity: 1; transform: scale(1); filter: blur(0); }
@@ -214,7 +146,6 @@
         <div class="tab-container">
             <button class="tab-btn active" onclick="openTab(event, 'about')">About Me</button>
             <button class="tab-btn" onclick="openTab(event, 'doing')">What I Do</button>
-            <button class="tab-btn" onclick="openTab(event, 'cards')">Cards</button>
             <button class="tab-btn" onclick="openTab(event, 'socials')">Social Links</button>
         </div>
 
@@ -228,15 +159,6 @@
                     <li>- <span>I play Roblox and go outside sometimes.</span></li>
                     <li>- <span>Strategic command & operations.</span></li>
                 </ul>
-            </div>
-
-            <div id="cards" class="tab-content">
-                <div class="card-grid">
-                    <div class="role-card early">
-                        <h3>Early Supporter</h3>
-                        <p>One of the first to join the journey.</p>
-                    </div>
-                </div>
             </div>
 
             <div id="socials" class="tab-content">
